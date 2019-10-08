@@ -1,0 +1,25 @@
+<view class="tab">
+  <view class="tab-item">音乐推荐</view>
+  <view class="tab-item">播放器</view>
+  <view class="tab-item">播放列表</view>
+</view>
+
+<view class="content">
+  <swiper>
+
+    <swiper-item>
+      <include src="info.wxml" />
+    </swiper-item>
+
+    <swiper-item>
+      <include src="play.wxml" />
+    </swiper-item>
+
+    <swiper-item>
+      <include src="playlist.wxml" />
+    </swiper-item>
+
+  </swiper>
+</view>
+
+<view class="player"></view>
