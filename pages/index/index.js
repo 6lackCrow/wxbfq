@@ -68,6 +68,27 @@ Page({
     })
   },
 
+  play: function () {
+    this.audioCtx.play()
+    this.setData({
+      state: 'running'
+    })
+  },
+
+  pause: function () {
+    this.audioCtx.pause()
+    this.setData({
+      state: 'paused'
+    })
+  },
+
+  next: function () {
+    var index = this.data.playIndex >= this.data.playlist.length - 1 ? 0 : this.data.playIndex + 1
+    this.setMusic(index)
+    if (this.data.state === 'running') {
+      this.play()
+    }
+  },
 
   /**
    * 生命周期函数--监听页面显示
