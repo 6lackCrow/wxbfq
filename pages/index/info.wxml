@@ -1,1 +1,56 @@
-<view style="background:#ccc; color:#000; height:100%">info</view>
+<scroll-view class="content-info" scroll-y>
+
+  <swiper class="content-info-slide" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff" indicator-dots circular autoplay>
+
+    <swiper-item>
+      <image src="/images/banner.jpg"></image>
+    </swiper-item>
+
+    <swiper-item>
+      <image src="/images/banner.jpg"></image>
+    </swiper-item>
+
+    <swiper-item>
+      <image src="/images/banner.jpg"></image>
+    </swiper-item>
+
+  </swiper>
+
+  <view class="content-info-portal">
+
+    <view>
+      <image src="/images/04.png"></image>
+      <text>私人FM</text>
+    </view>
+
+    <view>
+      <image src="/images/05.png"></image>
+      <text>每日歌曲推荐</text>
+    </view>
+
+    <view>
+      <image src="/images/06.png"></image>
+      <text>云音乐新歌榜</text>
+    </view>
+
+  </view>
+
+  <view class="content-info-list">
+    
+    <view class="list-title">推荐歌曲</view>
+
+    <view class="list-inner">
+    
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>asd</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>dsa</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>xxx</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>qqq</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>ww</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>ee</view>
+
+    </view>
+
+  </view>
+
+</scroll-view>
+
