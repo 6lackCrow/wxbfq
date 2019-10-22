@@ -41,12 +41,12 @@
 
     <view class="list-inner">
     
-      <view class="list-item"><image src="/images/cover.jpg" /><view></view>asd</view>
-      <view class="list-item"><image src="/images/cover.jpg" /><view></view>dsa</view>
-      <view class="list-item"><image src="/images/cover.jpg" /><view></view>xxx</view>
-      <view class="list-item"><image src="/images/cover.jpg" /><view></view>qqq</view>
-      <view class="list-item"><image src="/images/cover.jpg" /><view></view>ww</view>
-      <view class="list-item"><image src="/images/cover.jpg" /><view></view>ee</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>Ransom</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>Nowadays</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>GUMMO</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>LucidDream</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>History</view>
+      <view class="list-item"><image src="/images/cover.jpg" /><view></view>RedRoses</view>
 
     </view>
 
