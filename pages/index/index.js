@@ -7,10 +7,10 @@ Page({
     item:0,
     tab:0,
     playlist:[
-      { id: 1, title: 'Ransom', singer: 'Lil Tecca',src:'',coverImgUrl:'/images/cover.jpg'},
-      { id: 2, title: 'Empty', singer: 'Juice Wrld',src:'',coverImgUrl:'/images/cover.jpg'},
-      { id: 3, title: 'Nowadays', singer: 'Lil Skies',src:'',coverImgUrl:'/images/cover.jpg'},
-      { id: 4, title: 'GOTTI', singer: '6ix9ine',src:'',coverImgUrl:'/images/cover.jpg'},
+      { id: 1, title: 'Red Roses', singer: 'Lil skies', src:'http://localhost:3000/music/RedRoses.mp3',coverImgUrl:'/images/cover.jpg'},
+      { id: 2, title: 'Lucid Dream', singer: 'Juice Wrld', src:'http://localhost:3000/music/LucidDream.mp3',coverImgUrl:'/images/cover.jpg'},
+      { id: 3, title: 'Nowadays', singer: 'Lil Skies', src:'http://localhost:3000/music/Nowadays.mp3',coverImgUrl:'/images/cover.jpg'},
+      { id: 4, title: 'History', singer: 'Rich Brain', src:'http://localhost:3000/music/History.mp3',coverImgUrl:'/images/cover.jpg'},
     ],
     state:'paused',
     playIndex:0,
@@ -52,7 +52,28 @@ Page({
   onReady: function () {
     this.audioCtx = wx.createInnerAudioContext()
     this.setMusic(0)
+    var that = this
+    this.audioCtx.onError(function () {
+      console.log('播放失败：' + that.audioCtx.src)
+    })
+    this.audioCtx.onEnded(function () {
+      that.next()
+    })
+    this.audioCtx.onPlay(function () { })
+    this.audioCtx.onTimeUpdate(function () {
+      that.setData({
+        'play.duration': formatTime(that.audioCtx.duration),
+        'play.currentTime': formatTime(that.audioCtx.currentTime),
+        'play.percent': that.audioCtx.currentTime / that.audioCtx.duration * 100
+      })
+    })
+    function formatTime(time) {
+      var minute = Math.floor(time / 60) % 60;
+      var second = Math.floor(time) % 60
+      return (minute < 10 ? '0' + minute : minute) + ':' + (second < 10 ? '0' + second:second)
+    }
   },
+
 
   setMusic: function (index) {
     var music = this.data.playlist[index]
@@ -90,6 +111,15 @@ Page({
     }
   },
 
+  sliderChange: function (e) {
+    var second = e.detail.value * this.audioCtx.duration / 100
+    this.audioCtx.seek(second)
+  },
+
+  change: function (e) {
+    this.setMusic(e.currentTarget.dataset.index)
+    this.play()
+  },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -35,10 +35,12 @@
     <view class="player-info-title">{{play.title}}</view>
     <view class="player-info-singer">{{play.singer}}</view>
   </view>
+
   <view class="player-controls">
     <image src="/images/01.png" bindtap="changePage" data-page="2" />
     <image wx:if="{{state=='paused'}}" src="/images/02.png" bindtap="play" />
     <image wx:else src="/images/02stop.png" bindtap="pause" />
     <image src="/images/03.png" bindtap="next" />
   </view>
+   
 </view>
