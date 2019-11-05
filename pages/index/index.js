@@ -111,6 +111,20 @@ Page({
     }
   },
 
+  back: function () {
+    var index = this.data.playIndex
+   
+    if(index == 0){
+      index = this.data.playlist.length
+    }
+    this.setMusic(index-1)
+    if (this.data.state === 'running') {
+      this.play()
+    }
+
+
+
+  },
   sliderChange: function (e) {
     var second = e.detail.value * this.audioCtx.duration / 100
     this.audioCtx.seek(second)
